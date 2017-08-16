@@ -7,16 +7,16 @@ using UnityEngine;
 
 namespace TLDKit {
     public class MapManager : MonoBehaviour {
-        public static Vector3 LocateSceneByName(string scene) {
+        public static GameObject LocateSceneByName(string scene) {
             LoadScene[] shit = FindObjectsOfType(typeof(LoadScene)) as LoadScene[];
             if (shit != null) {
                 foreach (LoadScene each in shit) {
                     if (each.m_SceneToLoad.StartsWith(scene)) {
-                        return each.gameObject.transform.localPosition;
+                        return each.gameObject;
                     }
                 }
             }
-            return Vector3.zero;
+            return null;
         }
 
         public static void AddToMap(Panel_Map map, String sceneName, string locName, string ico, Vector3 position) {
