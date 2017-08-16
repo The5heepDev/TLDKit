@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace TLDKit {
     public class MapManager : MonoBehaviour {
-        public static GameObject LocateSceneByName(string scene) {
+        public static List<Vector3> LocateSceneByName(string scene) {
             LoadScene[] shit = FindObjectsOfType(typeof(LoadScene)) as LoadScene[];
+            List<Vector3> spots = new List<Vector3>();
             if (shit != null) {
                 foreach (LoadScene each in shit) {
                     if (each.m_SceneToLoad.StartsWith(scene)) {
-                        return each.gameObject;
+                        spots.Add(each.transform.parent.parent.localPosition);
                     }
                 }
             }
-            return null;
+            return spots;
         }
-
         public static void AddToMap(Panel_Map map, String sceneName, string locName, string ico, Vector3 position) {
             Traverse panel_Map = Traverse.Create(map);
             Traverse worldPositionToMapPosition = panel_Map.Method("WorldPositionToMapPosition", new Type[] { typeof(String), typeof(Vector3) });
@@ -42,6 +42,8 @@ namespace TLDKit {
             m_TransformToMapData.Add(child, mapElementSaveData);
         }
     }
+    
+
     public class AssetManager {
         private static Dictionary<string, AssetBundle> knownAssetBundles = new Dictionary<string, AssetBundle>();
         private static Dictionary<string, AssetBundle> knownAssetNames = new Dictionary<string, AssetBundle>();
