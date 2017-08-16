@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace TLDKit {
     public class MapManager : MonoBehaviour {
-        public static Vector3 FindCache() {
+        public static Vector3 LocateSceneByName(string scene) {
             LoadScene[] shit = FindObjectsOfType(typeof(LoadScene)) as LoadScene[];
             if (shit != null) {
                 foreach (LoadScene each in shit) {
-                    if (each.m_SceneToLoad.StartsWith("PrepperCache")) {
+                    if (each.m_SceneToLoad.StartsWith(scene)) {
                         return each.gameObject.transform.localPosition;
                     }
                 }
