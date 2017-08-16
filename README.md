@@ -10,6 +10,9 @@ This is a simple api for mods to
 
  
 The list of uses is ever growing, and should have backwards compatability between versions.
+
+
+Get the [latest version here](https://github.com/The5heepDev/TLDKit/releases).
  
  
 Requires the [Mod Loader](https://github.com/zeobviouslyfakeacc/ModLoaderInstaller) to run.
