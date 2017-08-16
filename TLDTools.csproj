@@ -31,10 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MapTool.cs" />
-    <Compile Include="ModAssetBundleManager.cs" />
+    <Compile Include="TKDKit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilsPatch.cs" />
+    <Compile Include="Patches.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
